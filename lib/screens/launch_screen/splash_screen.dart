@@ -1,10 +1,18 @@
 import 'package:flutter/material.dart';
+import 'starting_screen.dart';
 
 class LaunchScreen extends StatelessWidget {
   const LaunchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Future.delayed(const Duration(seconds: 3), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => StartingScreen()),
+      );
+    });
+
     return Scaffold(
       backgroundColor: const Color(0xFFF4F8FB), // 배경색 설정
       body: Stack(
