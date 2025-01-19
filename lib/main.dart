@@ -1,21 +1,22 @@
 import 'package:flutter/material.dart';
-import 'launch_screen/starting_screen.dart';
+import 'signup_screen/welcome.dart'; // welcome.dart 파일의 경로를 지정
 
 void main() {
   runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'JANSORI',
+      debugShowCheckedModeBanner: false, // 디버그 배너 제거
+      title: 'Jansori App',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const StartingScreen(), // 앱 시작 시 StartingScreen을 표시
+      home: const WelcomeScreen(), // 초기 화면을 WelcomeScreen으로 설정
     );
   }
 }
